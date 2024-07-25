@@ -8,12 +8,18 @@ class SISPerson(Base):
 
     ATTRIBUTES = [
         "name",
-        "first_name",
-        "middle_name",
-        "last_name",
-        "email",
-        "gender",
-        "nationality",
+        "avatar",
+        "common_name",
         "date_of_birth",
+        "email",
+        "english_name",
+        "first_name",
+        "full_name",
+        "gender",
+        "last_name",
+        "middle_name",
+        "nationality",
+        "phone_number",
+        "primary_role",  # ["Student", "Guardian", "Teacher", "Staff"]
     ]
     doctype = "SIS Person"

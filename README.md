@@ -11,15 +11,15 @@ To connect to the server, this tool needs the following environment variables:
 
 The input data of this tool is cleaned data in form of Excel Files:
 
-- `student.xlsx`: Contains the data of the students. This data will be fill into SIS Student and SIS Person
-- `school_class.xlsx`: Contains the data of the school classes (e.g. Class 1.2, Class 2.2, ...). Grade levels will be extracted from class names, e.g. 1.1 -> 1, 2.1 -> 2, ...
-- `teacher.xlsx`: Contains the data of the teachers.
-- `family.xlsx`: Contains the data of the family members including guardians and students.
-- `course.xlsx`: Contains the data of the courses.
-- `timetable_columns.xlsx`: Contains the data of the timetable columns and rows.
-- `timetable.xlsx`: Contains the data of the timetable and timetable day.
-- `school_feed.xlsx` (Optional): Contains the data of the school news & events.
-- `class_activity.xlsx` (Optional): Contains the data of the class activities.
+- `sis_student.xlsx`: Contains the data of the students. This data will be fill into SIS Student and SIS Person
+- `sis_school_class.xlsx`: Contains the data of the school classes (e.g. Class 1.2, Class 2.2, ...). Grade levels will be extracted from class names, e.g. 1.1 -> 1, 2.1 -> 2, ...
+- `sis_teacher.xlsx`: Contains the data of the teachers.
+- `sis_family.xlsx`: Contains the data of the family members including guardians and students.
+- `sis_course.xlsx`: Contains the data of the courses.
+- `sis_timetable_columns.xlsx`: Contains the data of the timetable columns and rows.
+- `sis_timetable.xlsx`: Contains the data of the timetable and timetable day.
+- `sis_school_feed.xlsx` (Optional): Contains the data of the school news & events.
+- `sis_class_activity.xlsx` (Optional): Contains the data of the class activities.
 
 ## Getting Started
 

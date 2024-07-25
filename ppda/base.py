@@ -64,6 +64,32 @@ class Base:
         else:
             self.conn.update(self.to_json())
 
+    def save_if_not_exists(self, filters, update=False):
+        """
+        Save the object if it does not exist in the server
+        """
+
+        found_id = self.__class__.exists(filters)
+        if not found_id:
+            self.save()
+            return False
+        else:
+            # print(f"{self.doctype} already exists: ID {found_id}")
+            self.name = found_id
+            if update:
+                self.save()
+            return self.name
+
+    @classmethod
+    def exists(cls, filters):
+        """
+        Check if the object exists in the server
+        """
+        found = cls.conn.get_list(cls.doctype, filters=filters)
+        if isinstance(found, list) and len(found) > 0:
+            return found[0].get("name")
+        return False
+
     @classmethod
     def create(cls, data):
         """
@@ -87,9 +113,25 @@ class Base:
         Find a list of documents from the server
         """
         rows = cls.conn.get_list(
-            cls.doctype, fields, filters, limit_start, limit_page_length, order_by
+            cls.doctype,
+            fields=fields,
+            filters=filters,
+            limit_start=limit_start,
+            limit_page_length=limit_page_length,
+            order_by=order_by,
         )
         return output_form(cls, rows, output)
+
+    @classmethod
+    def find_one(cls, fields=["*"], filters=None):
+        rows = cls.conn.get_list(
+            cls.doctype,
+            fields=fields,
+            filters=filters,
+            limit_start=0,
+            limit_page_length=1,
+        )
+        return output_form(cls, rows, "Object")[0]
 
     @classmethod
     def find_all(cls, fields=["*"], output="DataFrame"):
