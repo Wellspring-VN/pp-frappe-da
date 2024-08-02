@@ -12,5 +12,6 @@ class SISStaff(Base):
         "employee_code",
         "full_name",
         "person",
+        "department",
     ]
     doctype = "SIS Staff"
